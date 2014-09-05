@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>[cb:blog_page_title] | [cb:blog_slogan]</title>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- meta type, charset, desc, keywords -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="fa" />
+  <meta name="description" content="[cb:blog_meta_description]" />
+  <meta name="keywords" content="[cb:blog_meta_keywords]" />
+
+  <!-- rss, atom feeds -->
+  <link rel="alternate" type="application/rss+xml" title="[cb:blog_title]" href="[cb:blog_rss_href]" />
+  <link rel="alternate" type="application/atom+xml" title="[cb:blog_title]" href="[cb:blog_atom_href]" />
+
+  <!-- faveIcon -->
+  <link href="http://s1.picofile.com/file/7493554187/index.jpg" type="image/x-icon" rel="icon" />
+
+  <!-- google analys -->
+  <meta name="google-site-verification" content="tu8xS-x70POtjw8xzVlhw3DW3qRkO9ldq1qayvDVsBU" />
+
+</head>
+<body class="gradiant" >
+
+  <!-- container for content & menu -->
+  <div id="container" >
+
+    <!-- banner -->
+    <div id="banner" class="gradiant" >
+
+      <h1>[cb:blog_page_title]</h1>
+      <h5>[cb:blog_slogan]</h5>
+
+    </div>
+
+    <!-- menu -->
+    <div id="menu" >
+
+      <!--index-->
+      <article>
+        
+        <div class="title-of-x" >
+          <li>فهرست</li>
+        </div>
+        <hr>
+
+        <p>امروز: <time>[cb:blog_today_date]</time></p>
+
+        <p>[cb:blog_script]</p>
+
+        <p align=justify>درباره: [cb:blog_description]</p>
+
+        [cb:blog_logo]
+
+        <!-- extra pages -->
+        <cb:block_extrapage>
+          <ul>
+            <cb:loop_extrapage>
+              <li><a href=[cb:extrapage_href]>[cb:extrapage_title]</a></li>
+            </cb:loop_extrapage>
+
+          </ul>
+        </cb:block_extrapage>
+        <!-- end of extra pages -->
+        
+      </article>
+      <!-- end index -->
+
+      <!-- start recent post -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>ارسال های جدید</li>
+        </div>
+        <hr>
+
+        <cb:block_blog_recent_post>
+          <cb:loop_blog_recent_post>
+            <a href=[cb:blog_recent_post_href] title=[cb:blog_recent_post_date]>
+              [cb:blog_recent_post_text]
+            </a>
+            <br>
+
+          </cb:loop_blog_recent_post>
+
+          <a href=[cb:blog_recent_post_full_list_href]>لیست تمام مطالب</a>
+
+        </cb:block_blog_recent_post>
+
+      </article>
+      <!-- end recent -->
+
+
+      <!-- start tag -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>کلید واژه ها</li>
+        </div>
+        <hr>
+
+        <cb:block_blog_tag_cloud>
+
+          <p class="tag-alignment">
+            <cb:loop_blog_tag_cloud>
+              <a href="[cb:blog_tag_cloud_href]"> [cb:blog_tag_cloud_text] </a>
+            </cb:loop_blog_tag_cloud>
+          </p>
+
+        </cb:block_blog_tag_cloud>
+
+      </article>
+      <!-- end tag -->
+
+
+
+      <!-- start of  catagories -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>موضوعات</li>
+        </div>
+        <hr>
+
+        <cb:block_blog_category>
+          <cb:loop_blog_category>
+
+            <a href="[cb:blog_category_href]">
+              [cb:blog_category_name]([cb:blog_category_post_count])
+            </a>
+            <br>
+
+          </cb:loop_blog_category>
+        </cb:block_blog_category>
+
+      </article>
+      <!-- end of  catagories -->
+
+
+      <!-- start archive -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>آرشیو</li>
+        </div>
+        <hr>
+
+        <cb:block_blog_archive>
+          <cb:loop_blog_archive>
+            <a href='[cb:blog_archive_href]'>[cb:blog_archive_text]</a>
+            <br/>
+          </cb:loop_blog_archive>
+
+          <a href="[cb:blog_archive_full_list_href]">آرشیو کامل</a>
+        </cb:block_blog_archive>
+
+      </article>
+      <!-- end archive -->
+
+      <!-- start link of friends -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>پیوندها</li>
+        </div>
+        <hr>
+        
+        <cb:block_linkdaily>
+
+          <cb:loop_linkdaily>
+            <a href="[cb:linkdaily_href]" title="[cb:linkdaily_title]" target="_blank">[cb:linkdaily_text]</a>
+            <br>
+          </cb:loop_linkdaily>
+          <br>
+
+          <a href="[cb:linkdaily_full_list_href]">همه لینکها</a>
+          
+          <br>
+          
+          <a href="[cb:linkdaily_new_href]">ارسال لینک</a>
+        </cb:block_linkdaily>
+
+      </article>
+      <!-- end link of friends -->
+
+      <!-- start poll -->
+      <article>
+
+        <div class="title-of-x" >
+          <li>نظرسنجی</li>
+        </div>
+        <hr>
+
+        <cb:block_poll>
+
+          <p>[cb:poll_question]</p>
+          
+          <cb:loop_poll>
+            [cb:poll_answer]
+            <br>
+          </cb:loop_poll>
+          <br>
+          <input type="submit" value="[cb:poll_button_text]"/>
+        </cb:block_poll>
+
+      </article>
+      <!-- end poll -->
+
+
+      <!-- start status -->
+      <article>
+        <div class="title-of-x" >
+          <li>آمارها</li>
+        </div>
+        <hr>
+
+        <cb:block_stat>
+          <ul>
+            <p>
+              <li>کل بازدیدها:    [cb:stat_total_view]</li>
+            </p>
+
+            <p>
+              <li>بازدید امروز :    [cb:stat_today_view]</li>
+              <li>بازدید دیروز :    [cb:stat_yesterday_view]</li>
+            </p>
+
+            <p>
+              <li>بازدید این ماه :  [cb:stat_this_month_view]</li>
+              <li>بازدید ماه قبل :  [cb:stat_last_month_view]</li>
+            </p>
+            
+            <p>
+              <li>تعداد نویسندگان :  [cb:stat_total_author]</li>
+              <li>تعداد کل مطالب :  [cb:stat_total_post]</li><br>
+            </p>
+
+            <p>
+              <li>آخرین بازدید :    [cb:stat_last_view_date]</li>
+              <li>آخرین بروز رسانی :  [cb:stat_modify_date]</li>
+            </p>
+          </ul>
+        </cb:block_stat>
+
+      </article>
+      <!-- end status -->
+
+    </div>
+
+    <!-- content -->
+    <div id="content" >
+
+
+      <!-- post block started here -->
+      <cb:block_post>
+        
+        <!-- each blog post from here -->
+        <cb:loop_post>
+
+          <!-- contents of each post -->
+          <article>
+
+            <!-- post header start -->
+            <div class="title-of-x" >
+              <strong>
+                <li>
+                  <!-- title of post -->
+                  <a href="[cb:post_href]" title=" مطلب شماره: [cb:post_id]">[cb:post_title]</a>
+
+                  <!-- comment circle -->
+                  <div class="comment-box" >
+                    <div class="comment" >
+                      <a target="_self" href="[cb:post_comment_href]">[cb:post_comment_count]</a>
+                    </div>
+                  </div>
+
+                </li>
+              </strong>
+            </div>
+            <hr>
+            <!-- post header end -->
+
+
+
+            <!-- general list start -->
+            <cb:block_general_list>
+              <cb:loop_general_list>
+                <a href=" [cb:general_list_href]" title=" [cb:general_list_title]">[cb:general_list_text]</a>
+                <br>
+              </cb:loop_general_list>
+            </cb:block_general_list>
+            <!-- general list end -->
+
+
+            <!-- post publish information: author, catagory, time, -->
+            <h5>
+              <!-- author -->
+              نویسنده: "<a href="[cb:post_author_href]">[cb:post_author_name]</a>"،
+
+
+              <!-- catagory  started -->
+              ارسال شده در: "
+
+              <cb:block_post_category>
+                <cb:loop_post_category>
+                  <a href="[cb:post_category_href]"> [cb:post_category_name] </a>،
+                </cb:loop_post_category>
+              </cb:block_post_category>"،
+
+              <!-- catagory ended -->
+
+              <!-- post date/time from here-->
+              زمان ارسال: "  [cb:post_create_date]
+              ساعت       [cb:post_create_time]"
+              <!-- post date/time to here-->
+
+            </h5>
+
+            <!-- post body -->
+            [cb:post_body1]
+            [cb:post_body2]
+
+            <br>
+
+            <!-- link for continue reading -->
+            [cb:post_continue_link]
+
+            <br>
+
+            <!-- post info date/time (edit), tags, related posts, ... -->
+            <h5>
+
+              <!-- last edit date/time -->
+              آخرین ویرایش در: "  [cb:post_edit_date]
+              ساعت         [cb:post_edit_time]"
+              
+              <br>
+
+              <!-- tags -->
+              <cb:block_post_tag>
+                برچسب ها: 
+
+                <cb:loop_post_tag>
+                  "<a href="[cb:post_tag_href]" >[cb:post_tag_name]</a>" ،
+                </cb:loop_post_tag>
+
+              </cb:block_post_tag>
+
+              <br>
+
+              <!-- related posts -->
+              <cb:block_post_related_link>
+                در این ارتباط بخوانید:
+
+                  <cb:loop_post_related_link>
+                    "<a href="[cb:post_related_link_href]" target="_blank">[cb:post_related_link_name]</a>"،
+                  </cb:loop_post_related_link>
+              </cb:block_post_related_link>
+
+              <br>
+
+            </h5>
+
+            <!-- end of post body -->
+
+            <!-- start of comments under post -->
+            <cb:block_post_comment>
+              
+              <strong>نظرات</strong>
+              <hr>
+              
+              <!-- comment shows up -->
+              <cb:loop_post_comment>
+
+                <!-- user info -->
+                <a href="[cb:post_comment_senderweb]" target="_blank"> [cb:post_comment_sendername]</a> 
+                
+                [cb:post_comment_body]
+                <br>
+
+                <!-- comment info -->
+                ارسال شده در [cb:post_comment_date]
+                <br>
+
+                <!-- anser to comment -->
+                <ul>
+                  [cb:post_comment_replystart]
+                  <section>
+
+                      <!-- who's answer.. -->
+                      <p>[cb:post_comment_replyname]:</p>
+                        
+                      <!-- what he/she answers... -->
+                      <p>[cb:post_comment_replybody]</p>
+
+                    </section>
+
+                  [cb:post_comment_replyend]
+                </ul>
+                <!-- end of answer to the comment -->
+
+
+                <hr>
+
+              </cb:loop_post_comment>
+              <!-- end of comments -->
+
+              <br/>
+            </cb:block_post_comment>
+
+
+          </article>
+
+        </cb:loop_post>
+        <!-- each blog post to here :) -->
+
+
+      </cb:block_post>
+      <!-- post block ended here -->
+
+      <article>
+        <!-- pages change started -->
+        <cb:block_pages>
+
+          <cb:loop_pages>
+            [<a href=[cb:pages_href] >[cb:pages_no]</a>]-
+          </cb:loop_pages>
+
+          [[cb:pages_total]]
+        </cb:block_pages>
+        <!-- end of page numbers -->
+      </article>
+
+    </div>
+
+    <footer>
+      <ul>
+        Design :<a href="mailto:feeruzy@gmail.com" > Feeruzy [at] gmail [dot] com </a>
+      </ul>
+    </footer>
+  </div>
+
+</body>
+</html>
